@@ -40,12 +40,12 @@ pipeline {
         stage('E2E') {
             agent {
                 docker{
-                    image 'mcr.microsoft.com/playwright:v1.39.0-jammy'
+                    image 'mcr.microsoft.com/playwright:v1.49.0-noble'
                     reuseNode true
                 }
             }
             steps {
-                echo 'Test stage'
+                echo 'E2E stage'
                 sh '''
                     npm install serve
                     node_modules/.bin/serve -s build &
